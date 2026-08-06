@@ -18,7 +18,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuoteModal }) =>
             Transparent & Affordable Cleaning Rates
           </h1>
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
-            CYSERA provides high-end Home, Office, & Steam Cleaning with transparent pricing and zero hidden fees. Claim 20% OFF your first clean today!
+            CYSERA provides high-end Home, Office, Solar & Steam Cleaning with transparent pricing and zero hidden fees. Claim 20% OFF your first clean today!
           </p>
         </div>
       </section>
@@ -39,19 +39,19 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuoteModal }) =>
           <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-lg flex flex-col justify-between">
             <div>
               <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-md">
-                Hourly Maintenance Clean
+                Residential Clean
               </span>
               <h3 className="text-2xl font-bold text-slate-900 mt-2">Home Cleaning</h3>
               <div className="text-3xl font-black text-slate-900 my-4">
-                $35 <span className="text-sm font-normal text-slate-500">/ hr per cleaner</span>
+                $50 <span className="text-sm font-normal text-slate-500">/ starting rate</span>
               </div>
               <p className="text-xs text-slate-500 mb-4">Affordable, thorough domestic cleaning for Melbourne families.</p>
               <ul className="space-y-3 text-xs text-slate-700 font-medium border-t border-slate-100 pt-4">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Minimum 2 hours per visit
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" /> All eco cleaning products included
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" /> All eco cleaning products included
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Full kitchen & bathroom scrub
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Same regular trusted cleaner
@@ -62,10 +62,10 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuoteModal }) =>
               </ul>
             </div>
             <button
-              onClick={() => onOpenQuoteModal("Domestic Clean ($35/hr)")}
+              onClick={() => onOpenQuoteModal("Domestic Clean ($50)")}
               className="w-full mt-6 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl text-xs transition-colors"
             >
-              Book Home Clean ($35/hr)
+              Book Home Clean ($50)
             </button>
           </div>
 
@@ -110,7 +110,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuoteModal }) =>
               <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Commercial</span>
               <h3 className="text-2xl font-bold text-slate-900 mt-1">Office & Business</h3>
               <div className="text-3xl font-black text-slate-900 my-4">
-                From $100 <span className="text-sm font-normal text-slate-500">/ visit</span>
+                From $65 <span className="text-sm font-normal text-slate-500">/ visit</span>
               </div>
               <p className="text-xs text-slate-500 mb-4">Tailored commercial schedule for offices, clinics & retail.</p>
               <ul className="space-y-3 text-xs text-slate-700 font-medium border-t border-slate-100 pt-4">
@@ -129,10 +129,10 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuoteModal }) =>
               </ul>
             </div>
             <button
-              onClick={() => onOpenQuoteModal("Commercial Office Quote")}
+              onClick={() => onOpenQuoteModal("Commercial Office Quote ($65)")}
               className="w-full mt-6 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl text-xs transition-colors"
             >
-              Request Business Quote
+              Request Business Quote ($65)
             </button>
           </div>
         </div>

@@ -127,37 +127,37 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuoteModal
       <section className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white p-6 rounded-2xl border-2 border-emerald-500 shadow-lg text-center space-y-3 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
-                  <Award className="w-6 h-6" />
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div className="bg-white p-4 sm:p-6 rounded-2xl border-2 border-emerald-500 shadow-lg text-center space-y-2 sm:space-y-3 hover:shadow-xl transition-shadow">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-3xl font-black text-slate-900">5.0★</div>
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Top Rated Service</div>
+                <div className="text-xl sm:text-3xl font-black text-slate-900 whitespace-nowrap">5.0★</div>
+                <div className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Top Rated Service</div>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl border-2 border-emerald-500 shadow-lg text-center space-y-3 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
-                  <Users className="w-6 h-6" />
+              <div className="bg-white p-4 sm:p-6 rounded-2xl border-2 border-emerald-500 shadow-lg text-center space-y-2 sm:space-y-3 hover:shadow-xl transition-shadow">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-3xl font-black text-slate-900">500+</div>
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Happy Clients</div>
+                <div className="text-xl sm:text-3xl font-black text-slate-900 whitespace-nowrap">10+ Years</div>
+                <div className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Local Experience</div>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl border-2 border-emerald-500 shadow-lg text-center space-y-3 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
-                  <ThumbsUp className="w-6 h-6" />
+              <div className="bg-white p-4 sm:p-6 rounded-2xl border-2 border-emerald-500 shadow-lg text-center space-y-2 sm:space-y-3 hover:shadow-xl transition-shadow">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
+                  <ThumbsUp className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-3xl font-black text-slate-900">100%</div>
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Bond Guarantee</div>
+                <div className="text-xl sm:text-3xl font-black text-slate-900 whitespace-nowrap">100%</div>
+                <div className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Bond Guarantee</div>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl border-2 border-emerald-500 shadow-lg text-center space-y-3 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
-                  <Clock className="w-6 h-6" />
+              <div className="bg-white p-4 sm:p-6 rounded-2xl border-2 border-emerald-500 shadow-lg text-center space-y-2 sm:space-y-3 hover:shadow-xl transition-shadow">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
+                  <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-3xl font-black text-slate-900">7 Days</div>
-                <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Flexible Availability</div>
+                <div className="text-xl sm:text-3xl font-black text-slate-900 whitespace-nowrap">7 Days</div>
+                <div className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Flexible Availability</div>
               </div>
             </div>
           </ScrollReveal>

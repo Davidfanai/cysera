@@ -5,9 +5,9 @@ export interface SuburbRegion {
 
 export const SERVICED_REGIONS: SuburbRegion[] = [
   {
-    region: "Maroondah & HQ Area",
+    region: "Maroondah Region",
     suburbs: [
-      "Bayswater North (Headquarters)",
+      "Bayswater North",
       "Croydon",
       "Heathmont",
       "Kilsyth",
@@ -41,7 +41,7 @@ export const SERVICED_REGIONS: SuburbRegion[] = [
     ]
   },
   {
-    region: "Manningham",
+    region: "Manningham Region",
     suburbs: [
       "Doncaster",
       "Donvale",
@@ -49,7 +49,7 @@ export const SERVICED_REGIONS: SuburbRegion[] = [
     ]
   },
   {
-    region: "Yarra Ranges & Surrounds",
+    region: "Yarra Ranges Border",
     suburbs: [
       "Belgrave",
       "Chirnside Park",

@@ -12,13 +12,13 @@ export const SuburbSearch: React.FC = () => {
   return (
     <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100">
       <div className="text-center max-w-2xl mx-auto mb-8">
-        <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+        <span className="bg-emerald-100 text-emerald-800 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
           Local Melbourne Service Areas
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
           We Clean Across Bayswater North & Surrounding Suburbs
         </h2>
-        <p className="text-slate-600 text-sm mt-2">
+        <p className="text-slate-600 text-sm sm:text-base mt-2">
           Cysera provides fast, reliable residential & commercial cleaning services across Maroondah, Knox, Whitehorse, Manningham, and Yarra Ranges regions.
         </p>
 
@@ -54,7 +54,7 @@ export const SuburbSearch: React.FC = () => {
             </div>
           </div>
           <a
-            href="tel:0400000000"
+            href="tel:0475436637"
             className="shrink-0 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition-colors flex items-center gap-1.5"
           >
             <Phone className="w-3.5 h-3.5" /> Call Now
@@ -62,8 +62,8 @@ export const SuburbSearch: React.FC = () => {
         </div>
       )}
 
-      {/* Regions Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Regions Grid with Prominent Extra-Large Suburb Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {SERVICED_REGIONS.map((regionGroup, idx) => {
           const groupMatchingSuburbs = regionGroup.suburbs.filter(s =>
             s.toLowerCase().includes(searchTerm.toLowerCase().trim())
@@ -76,20 +76,20 @@ export const SuburbSearch: React.FC = () => {
           return (
             <div
               key={idx}
-              className="bg-slate-50/70 p-5 rounded-2xl border border-slate-200/80 hover:bg-white hover:shadow-lg transition-all duration-200"
+              className="bg-slate-50/90 p-6 sm:p-7 rounded-3xl border border-slate-200/90 hover:bg-white hover:shadow-2xl transition-all duration-200"
             >
-              <div className="flex items-center gap-2 mb-3 border-b border-slate-200 pb-2.5">
-                <MapPin className="w-4 h-4 text-emerald-600 shrink-0" />
-                <h3 className="font-bold text-slate-900 text-base">{regionGroup.region}</h3>
+              <div className="flex items-center gap-2.5 mb-5 border-b border-slate-200 pb-3.5">
+                <MapPin className="w-6 h-6 text-emerald-600 shrink-0" />
+                <h3 className="font-black text-slate-950 text-xl sm:text-2xl">{regionGroup.region}</h3>
               </div>
-              <ul className="grid grid-cols-2 gap-2">
+              <ul className="grid grid-cols-2 gap-3">
                 {groupMatchingSuburbs.map((suburb, sIdx) => (
                   <li
                     key={sIdx}
-                    className="flex items-center gap-1.5 text-xs text-slate-700 font-medium hover:text-emerald-700 transition-colors"
+                    className="flex items-center gap-2.5 text-base sm:text-lg font-bold text-slate-900 hover:text-emerald-700 transition-colors py-2.5 px-3 rounded-2xl bg-white border border-slate-200/80 shadow-xs"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
-                    {suburb}
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                    <span className="truncate">{suburb}</span>
                   </li>
                 ))}
               </ul>
@@ -98,13 +98,13 @@ export const SuburbSearch: React.FC = () => {
         })}
       </div>
 
-      <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-500">
         <div className="flex items-center gap-2">
           <ShieldCheck className="w-4 h-4 text-emerald-600" />
           <span>Don't see your exact suburb? We cover all 15km radius around Bayswater North.</span>
         </div>
-        <span className="font-semibold text-emerald-700">
-          📍 Base Headquarters: Bayswater North VIC 3153
+        <span className="font-bold text-emerald-700">
+          📍 Primary Area: Bayswater North VIC 3153 & Surrounding Suburbs
         </span>
       </div>
     </div>

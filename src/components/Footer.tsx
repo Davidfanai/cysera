@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               "Everything Beautiful in Its Time" <span className="text-slate-400 text-xs font-sans font-normal">(Ecclesiastes 3:11)</span>
             </p>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              Making your home beautiful again. Residential & Commercial cleaning, Home Cleaning, Office Cleaning, and Carpet Steam Cleaning across Eastern Suburbs.
+              Making your home beautiful again. Residential & Commercial cleaning, Home Cleaning, Office Cleaning, Solar Cleaning, and Carpet Steam Cleaning across Eastern Suburbs.
             </p>
 
             <div className="p-3 bg-amber-400/10 border border-amber-400/30 rounded-xl text-amber-300 text-xs font-bold flex items-center gap-2">
@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               </div>
               <div className="flex items-center gap-2 text-xs text-slate-400">
                 <Award className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Home • Office • Steam Cleaning Specialists</span>
+                <span>Home • Office • Steam • Solar Cleaning Specialists</span>
               </div>
             </div>
 
@@ -98,13 +98,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
           <div className="space-y-3">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white">Services Offered</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>Home Cleaning</li>
-              <li>Office Cleaning</li>
-              <li>Steam Cleaning (Carpet & Upholstery)</li>
-              <li>Residential Cleaning</li>
-              <li>Commercial Cleaning</li>
-              <li>End of Lease (Bond Back) Clean</li>
-              <li>Tile & Grout Cleaning</li>
+              <li>Residential Home Cleaning</li>
+              <li>End of Lease Clean</li>
+              <li>Commercial & Office Cleaning</li>
+              <li>Carpet Steam Cleaning</li>
+              <li>Deep Intensive Cleaning</li>
+              <li>Solar Panel Cleaning</li>
             </ul>
           </div>
 
@@ -147,18 +146,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
           </div>
         </div>
 
-        {/* Suburbs Tag Cloud for SEO */}
+        {/* 2 Equal Columns Grid on Mobile with Enlarged Readable Fonts */}
         <div className="py-8 border-b border-slate-800">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
-            Local Melbourne Eastern Suburbs
+          <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
+            Service Areas • Melbourne Eastern Suburbs
           </h4>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5">
             {ALL_SUBURBS.map((suburb, idx) => (
               <span
                 key={idx}
-                className="text-[11px] bg-slate-900 border border-slate-800 text-slate-400 px-2.5 py-1 rounded-md"
+                className="text-xs sm:text-sm font-semibold bg-slate-900 border border-slate-800 text-slate-200 hover:text-emerald-400 hover:border-emerald-500/50 px-3 py-2.5 rounded-xl transition-all text-center flex items-center justify-center shadow-xs"
               >
-                {suburb} Cleaning
+                {suburb}
               </span>
             ))}
           </div>

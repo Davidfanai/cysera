@@ -20,7 +20,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: "Routine domestic cleaning tailored for busy Melbourne families. Weekly, fortnightly, or monthly options.",
     fullDesc: "Our eco-friendly home cleaning services transform your living space into a pristine sanctuary. From dusting ceiling fans to scrubbing kitchen benchtops and sanitizing bathrooms, CYSERA takes care of every detail.",
     iconName: "Home",
-    startingPrice: "$35 / hr",
+    startingPrice: "$50",
     badge: "Most Popular",
     popularFor: "Apartments, Townhouses, & Family Homes",
     inclusions: [
@@ -31,7 +31,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Tidying beds & emptying waste bins"
     ],
     features: [
-      "Transparent & affordable domestic rates",
+      "Flat rate starting at just $50",
       "100% Non-toxic eco-friendly products",
       "Consistent dedicated cleaning team",
       "Fully insured & police-checked cleaners"
@@ -69,7 +69,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: "Professional office, medical clinic, retail, & venue cleaning services tailored to your business schedule.",
     fullDesc: "Maintain an impeccable corporate image. CYSERA provides reliable after-hours or day cleaning for businesses across Bayswater, Ringwood, Box Hill, and surrounding business hubs.",
     iconName: "Building2",
-    startingPrice: "$100 / visit",
+    startingPrice: "$65 / visit",
     popularFor: "Offices, Retail Stores, Clinics, & Showrooms",
     inclusions: [
       "Desks, monitors & workstation sanitization",
@@ -80,7 +80,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Rubbish & recycling removal"
     ],
     features: [
-      "Custom commercial contracts & schedules",
+      "Custom commercial contracts starting from $65",
       "Flexible schedule (After hours, early morning, weekend)",
       "Security-cleared, police-checked cleaners",
       "Commercial grade eco disinfectants"
@@ -93,7 +93,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc: "High-pressure hot water extraction for deep stain removal, allergen elimination, and fresh carpets.",
     fullDesc: "Revitalize worn carpets and sofas with our heavy-duty truck-mount steam extraction systems. We target stubborn stains and pet odours.",
     iconName: "Sparkles",
-    startingPrice: "$79 (up to 3 rooms)",
+    startingPrice: "$79",
     badge: "Deep Stain Removal",
     popularFor: "Pet Owners, Allergy Sufferers, & End of Lease",
     inclusions: [
@@ -111,41 +111,19 @@ export const SERVICES_DATA: ServiceItem[] = [
     ]
   },
   {
-    id: "tile-grout-cleaning",
-    title: "Tile & Grout Cleaning",
-    category: "specialized",
-    shortDesc: "High-pressure rotary scrubbing to restore discoloured grout lines and dull floor tiles.",
-    fullDesc: "Tired of scrubbing dark grout lines on hands and knees? Our rotary pressure washer and specialized alkali solutions strip away decades of dirt.",
-    iconName: "Grid",
-    startingPrice: "$129",
-    popularFor: "Kitchens, Bathrooms, Patios, & Commercial Entryways",
-    inclusions: [
-      "Alkaline & acidic grout pre-soak treatment",
-      "High-speed rotary tile brush scrub",
-      "Enclosed high-pressure steam rinse & extraction",
-      "Grout line color restoration",
-      "Protective grout clear sealant application (optional)"
-    ],
-    features: [
-      "Restores tiles to like-new condition",
-      "Eliminates deep-set bathroom mould",
-      "Protective sealing prevents future staining",
-      "Zero splash back or mess left behind"
-    ]
-  },
-  {
     id: "deep-cleaning",
-    title: "Deep Intensive Cleaning",
+    title: "Deep Intensive Cleaning (Toilet Included)",
     category: "residential",
-    shortDesc: "Comprehensive top-to-bottom scrub for homes needing extra love, seasonal spring cleans, or post-renovation.",
-    fullDesc: "When standard cleaning isn't enough, CYSERA's Deep Clean targets every hidden corner, built-up grime, ceiling fan, window track, and appliance interior.",
+    shortDesc: "Comprehensive top-to-bottom scrub including full toilet & bathroom sanitization for homes needing extra care.",
+    fullDesc: "When standard cleaning isn't enough, CYSERA's Deep Intensive Clean targets every hidden corner, built-up grime, ceiling fan, window track, appliance interior, and thorough toilet sanitization.",
     iconName: "Zap",
     startingPrice: "$180",
     popularFor: "Spring Cleaning, Post-Reno, & Moving In",
     inclusions: [
+      "Full toilet scrub, descaling & deep sanitization",
+      "Deep scrub of tile grout & shower screen glass",
       "Inside cupboards & behind major appliances",
       "High dusting (light fixtures, ceiling corners, door frames)",
-      "Deep scrub of tile grout & shower screen glass",
       "Interior glass windows, mirrors, & tracks",
       "Skirting boards, architraves, & door handles wipe-down"
     ],
@@ -156,24 +134,26 @@ export const SERVICES_DATA: ServiceItem[] = [
     ]
   },
   {
-    id: "specialized-window-cleaning",
-    title: "Window & High-Pressure Washing",
+    id: "solar-panel-cleaning",
+    title: "Solar Panel Cleaning",
     category: "specialized",
-    shortDesc: "Crystal clear streak-free window cleaning and high-pressure outdoor patio & driveway washing.",
-    fullDesc: "Complete your property's shine with exterior pure-water pole window cleaning and high-pressure driveway power washing.",
+    shortDesc: "Professional chemical-free pure water cleaning to maximize solar panel efficiency and energy output.",
+    fullDesc: "Boost your solar system performance! Dirt, dust, bird droppings, and atmospheric film drastically reduce solar panel output. CYSERA uses pure de-ionized water and non-abrasive soft brushes for maximum efficiency.",
     iconName: "Sun",
-    startingPrice: "$89",
-    popularFor: "Residential Exterior, Storefronts, & Balconies",
+    startingPrice: "$200",
+    badge: "Eco Energy Boost",
+    popularFor: "Rooftop Solar Arrays, Residential & Commercial Panels",
     inclusions: [
-      "Streak-free interior & exterior glass cleaning",
-      "Flyscreen washing & frame wipe-down",
-      "High-pressure driveway & paver power wash",
-      "Gutter rim & balcony glass washing"
+      "Pure de-ionized water rinse & scrub",
+      "Removal of bird droppings, dust, pollen & lichen",
+      "Visual array & mounting frame inspection",
+      "Zero chemical residue streak-free finish"
     ],
     features: [
-      "Pure-water ion technology for streak-free shine",
-      "Safe ladder & extension pole equipment",
-      "Removes stubborn hard water stains"
+      "Increases solar energy production up to 25%",
+      "100% Non-abrasive safe cleaning technology",
+      "Fully insured roof safety certified technicians",
+      "Extends solar panel lifespan"
     ]
   }
 ];
