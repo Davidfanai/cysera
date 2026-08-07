@@ -41,6 +41,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     onClose();
   };
 
+  const inputStyle = "w-full max-w-full box-border px-3 py-2 sm:py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm text-slate-900 bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-all min-w-0";
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in overflow-hidden">
       <div className="relative w-full max-w-xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[92vh] sm:max-h-[90vh] my-auto">
@@ -87,7 +89,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div>
+                <div className="min-w-0">
                   <label className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 flex items-center gap-1">
                     <User className="w-3 h-3 text-emerald-600" /> Full Name *
                   </label>
@@ -97,10 +99,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder="e.g. Jane Smith"
-                    className="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className={inputStyle}
                   />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <label className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 flex items-center gap-1">
                     <Phone className="w-3 h-3 text-emerald-600" /> Phone Number *
                   </label>
@@ -110,13 +112,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     value={phone}
                     onChange={e => setPhone(e.target.value)}
                     placeholder="e.g. 0412 345 678"
-                    className="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className={inputStyle}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div>
+                <div className="min-w-0">
                   <label className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 flex items-center gap-1">
                     <Mail className="w-3 h-3 text-emerald-600" /> Email Address *
                   </label>
@@ -126,17 +128,17 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="jane@example.com.au"
-                    className="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className={inputStyle}
                   />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <label className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 flex items-center gap-1">
                     <MapPin className="w-3 h-3 text-emerald-600" /> Suburb *
                   </label>
                   <select
                     value={suburb}
                     onChange={e => setSuburb(e.target.value)}
-                    className="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white"
+                    className={inputStyle}
                   >
                     {ALL_SUBURBS.map((sub, i) => (
                       <option key={i} value={sub}>{sub}</option>
@@ -146,21 +148,21 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div>
+                <div className="min-w-0">
                   <label className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1">
                     Service Required
                   </label>
                   <select
                     value={selectedService}
                     onChange={e => setSelectedService(e.target.value)}
-                    className="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white"
+                    className={inputStyle}
                   >
                     {SERVICES_DATA.map(srv => (
                       <option key={srv.id} value={srv.id}>{srv.title}</option>
                     ))}
                   </select>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <label className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 flex items-center gap-1">
                     <Calendar className="w-3 h-3 text-emerald-600" /> Preferred Date
                   </label>
@@ -168,12 +170,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     type="date"
                     value={preferredDate}
                     onChange={e => setPreferredDate(e.target.value)}
-                    className="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    className={`${inputStyle} appearance-none`}
                   />
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <label className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1">
                   Additional Property Notes / Specs
                 </label>
@@ -182,7 +184,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   value={notes}
                   onChange={e => setNotes(e.target.value)}
                   placeholder="e.g., 3 bedrooms, 2 bathrooms, needs carpet steam clean in lounge..."
-                  className="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-slate-300 text-xs sm:text-sm text-slate-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className={inputStyle}
                 />
               </div>
 
