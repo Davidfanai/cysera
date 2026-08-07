@@ -12,10 +12,9 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenQuoteModal }) =>
 
   const categories = [
     { id: 'all', label: 'All Portfolio' },
-    { id: 'oven', label: 'Oven Degreasing' },
-    { id: 'carpet', label: 'Carpet Steam' },
     { id: 'bathroom', label: 'Tile & Bathroom' },
-    { id: 'kitchen', label: 'Kitchen & Living' }
+    { id: 'kitchen', label: 'Kitchen & Exhaust' },
+    { id: 'oven', label: 'Oven Degreasing' }
   ];
 
   const filteredItems = activeCategory === 'all'
@@ -62,27 +61,25 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenQuoteModal }) =>
               beforeImg={item.beforeImg}
               afterImg={item.afterImg}
               title={item.title}
-              description={item.description}
               location={item.location}
+              description={item.description}
               tags={item.tags}
             />
           ))}
         </div>
+      </section>
 
-        <div className="mt-16 bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 text-white p-8 sm:p-12 rounded-3xl text-center space-y-6 shadow-2xl border border-emerald-500/30">
-          <h3 className="text-2xl sm:text-3xl font-extrabold">
-            Ready to See This Same Transformation In Your Home?
-          </h3>
-          <p className="text-slate-300 text-sm max-w-xl mx-auto">
-            Book your professional clean today or get an instant price estimate for your Bayswater North or Eastern Suburbs property.
-          </p>
-          <button
-            onClick={() => onOpenQuoteModal("Gallery Transformation Quote")}
-            className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-8 py-4 rounded-2xl shadow-xl hover:shadow-emerald-500/40 transition-all inline-flex items-center gap-2 text-sm sm:text-base"
-          >
-            <Sparkles className="w-5 h-5" /> Book Your Transformation
-          </button>
-        </div>
+      <section className="bg-gradient-to-r from-emerald-900 to-slate-900 text-white py-12 px-4 rounded-3xl max-w-7xl mx-auto text-center space-y-4 shadow-xl">
+        <h2 className="text-2xl sm:text-3xl font-extrabold">Want Your Property To Look Like This?</h2>
+        <p className="text-emerald-100 text-sm max-w-xl mx-auto">
+          Get in touch today for a free, transparent quote. We cover all suburbs in Melbourne's Eastern region.
+        </p>
+        <button
+          onClick={() => onOpenQuoteModal("Gallery CTA Request")}
+          className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold px-8 py-3.5 rounded-xl transition-colors text-sm inline-flex items-center gap-2 shadow-lg"
+        >
+          <Sparkles className="w-4 h-4" /> Request Your Free Quote
+        </button>
       </section>
     </div>
   );

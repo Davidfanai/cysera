@@ -1,7 +1,7 @@
 export interface GalleryItem {
   id: string;
   title: string;
-  category: 'oven' | 'carpet' | 'bathroom' | 'tile' | 'kitchen';
+  category: 'oven' | 'bathroom' | 'tile' | 'kitchen';
   location: string;
   description: string;
   beforeImg: string;
