@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Send, CheckCircle2, Clock, Tag } from 'lucide-reac
 import { ALL_SUBURBS } from '../data/suburbsData';
 import { SERVICES_DATA } from '../data/servicesData';
 import { SuburbSearch } from '../components/SuburbSearch';
-import { InstagramIcon, FacebookIcon } from '../components/SocialIcons';
+import { InstagramIcon, FacebookIcon, WhatsAppIcon } from '../components/SocialIcons';
 
 export const ContactPage: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -45,14 +45,14 @@ export const ContactPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Quick Contact Info Cards Column */}
           <div className="lg:col-span-5 space-y-6">
-            {/* Call / SMS Card */}
+            {/* Call / WhatsApp Card */}
             <div className="bg-gradient-to-br from-emerald-950 to-slate-950 text-white p-6 sm:p-8 rounded-3xl border border-emerald-500/30 shadow-xl space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-2xl bg-emerald-500 text-slate-950 flex items-center justify-center font-bold">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">CALL / SMS DIRECT</h3>
+                  <h3 className="text-xl font-bold">CALL / WHATSAPP DIRECT</h3>
                   <p className="text-xs text-emerald-300">Speak directly with our local team</p>
                 </div>
               </div>
@@ -61,7 +61,7 @@ export const ContactPage: React.FC = () => {
                 <a href="tel:0475436637" className="text-2xl sm:text-3xl font-black text-white hover:text-emerald-400 block transition-colors">
                   0475 436 637
                 </a>
-                <a href="tel:0474780469" className="text-2xl sm:text-3xl font-black text-white hover:text-emerald-400 block transition-colors">
+                <a href="https://wa.me/61474780469" target="_blank" rel="noopener noreferrer" className="text-2xl sm:text-3xl font-black text-white hover:text-emerald-400 block transition-colors">
                   0474 780 469
                 </a>
               </div>
@@ -69,15 +69,17 @@ export const ContactPage: React.FC = () => {
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <a
                   href="tel:0475436637"
-                  className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded-xl text-center text-xs transition-colors"
+                  className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded-xl text-center text-xs transition-colors flex items-center justify-center gap-1.5"
                 >
-                  Call 0475 436 637
+                  <Phone className="w-4 h-4" /> Call 0475 436 637
                 </a>
                 <a
-                  href="sms:0474780469"
-                  className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl text-center text-xs transition-colors border border-slate-700"
+                  href="https://wa.me/61474780469"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#25D366] hover:bg-[#20ba5a] text-slate-950 font-extrabold py-3 rounded-xl text-center text-xs transition-colors shadow-md flex items-center justify-center gap-1.5"
                 >
-                  SMS 0474 780 469
+                  <WhatsAppIcon className="w-4 h-4" /> WhatsApp 0474 780 469
                 </a>
               </div>
             </div>
