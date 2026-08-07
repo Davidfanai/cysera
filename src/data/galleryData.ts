@@ -12,52 +12,52 @@ export interface GalleryItem {
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "gal-1",
-    title: "Heavy Baked-On Oven Interior Degreasing",
-    category: "oven",
+    title: "Bathroom Shower Tile & Glass Scrub",
+    category: "bathroom",
     location: "Ringwood East Property",
-    description: "Multi-year baked carbon and grease buildup completely removed using our eco-friendly non-toxic dip tank system during an End of Lease clean.",
+    description: "Deep scrub of shower floor tiles, drain, and glass screens removing soap scum, mineral deposits, and grime.",
     beforeImg: "/images/before1.jpeg",
     afterImg: "/images/after1.jpeg",
-    tags: ["End of Lease", "Oven Clean", "Carbon Removal"]
+    tags: ["Bathroom Clean", "Shower Glass", "Tile & Grout"]
   },
   {
     id: "gal-2",
-    title: "High-Traffic Carpet Steam & Stain Removal",
-    category: "carpet",
+    title: "Double Vanity Sink & Benchtop Scrub",
+    category: "bathroom",
     location: "Croydon Family Home",
-    description: "Deep hot-water steam extraction removed stubborn pet stains, embedded dirt, and allergen particles, drying soft and fresh in 3 hours.",
+    description: "Thorough sanitization and stain removal from bathroom double vanity sinks, tapware, and stone counter top.",
     beforeImg: "/images/before2.jpeg",
     afterImg: "/images/after2.jpeg",
-    tags: ["Carpet Steam Clean", "Stain Removal", "Deodorizing"]
+    tags: ["Vanity Clean", "Sink Polish", "Bathroom Sanitization"]
   },
   {
     id: "gal-3",
-    title: "Bathroom Tile Grout & Soap Scum Scrub",
-    category: "bathroom",
+    title: "Exhaust Fan & Rangehood Deep Degreasing",
+    category: "kitchen",
     location: "Bayswater North Townhouse",
-    description: "Heavy mineral deposits, soap scum, and discoloured shower tile grout lines completely restored to pristine condition.",
+    description: "Heavy grease, oil grime, and dust buildup completely scrubbed clean from exhaust fan vents and rangehood housing.",
     beforeImg: "/images/before3.jpeg",
     afterImg: "/images/after3.jpeg",
-    tags: ["Deep Clean", "Mould Scrub", "Glass Polish"]
+    tags: ["Rangehood Clean", "Degreasing", "Kitchen Exhaust"]
   },
   {
     id: "gal-4",
-    title: "Kitchen & Benchtop Deep Disinfection",
-    category: "kitchen",
+    title: "Oven & Air Fryer Tray Degreasing",
+    category: "oven",
     location: "Box Hill Residence",
-    description: "Stainless steel surfaces, rangehood filters, and stone benchtops scrubbed, sanitized, and polished to food safety standards.",
+    description: "Baked-on grease, burnt food residue, and carbon deposits scrubbed clean from oven interior trays and wire racks.",
     beforeImg: "/images/before4.jpeg",
     afterImg: "/images/after4.jpeg",
-    tags: ["Kitchen Sanitization", "Deep Scrub", "Stainless Polish"]
+    tags: ["Oven Clean", "Tray Degreasing", "Carbon Removal"]
   },
   {
     id: "gal-5",
-    title: "Residential Deep Intensive Clean",
-    category: "kitchen",
+    title: "Bathroom Basin & Tap Descaling",
+    category: "bathroom",
     location: "Doncaster Residence",
-    description: "Meticulous top-to-bottom deep clean removing stubborn grime, grease film, and accumulated dust.",
+    description: "Removal of mineral scale, hair residue, and grime from bathroom ceramic basin and tapware.",
     beforeImg: "/images/before5.jpeg",
     afterImg: "/images/after5.jpeg",
-    tags: ["Deep Clean", "Residential", "Spring Clean"]
+    tags: ["Basin Clean", "Descaling", "Bathroom Scrub"]
   }
 ];
