@@ -77,7 +77,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-                alt="CYSERA Pristine Home Cleaning"
+                alt="CYSERA Pristine House Cleaning"
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>

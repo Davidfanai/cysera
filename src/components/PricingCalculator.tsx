@@ -27,7 +27,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenQuot
 
   const calculateEstimate = () => {
     let total = basePrices[serviceType] || 90;
-    
+
     if (bedrooms > 1) {
       total += (bedrooms - 1) * 30;
     }
@@ -93,7 +93,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenQuot
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {[
-                { id: 'residential', label: 'Home Cleaning' },
+                { id: 'residential', label: 'House Cleaning' },
                 { id: 'bond', label: 'End of Lease (Bond)' },
                 { id: 'deep', label: 'Deep Spring Clean' },
                 { id: 'carpet', label: 'Carpet Steam Clean' },
@@ -102,11 +102,10 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenQuot
                 <button
                   key={item.id}
                   onClick={() => setServiceType(item.id)}
-                  className={`px-3.5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all text-left border ${
-                    serviceType === item.id
+                  className={`px-3.5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all text-left border ${serviceType === item.id
                       ? 'bg-emerald-600 text-white border-emerald-400 shadow-lg shadow-emerald-900/50 scale-[1.02]'
                       : 'bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -125,11 +124,10 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenQuot
                   <button
                     key={num}
                     onClick={() => setBedrooms(num)}
-                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-colors ${
-                      bedrooms === num
+                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-colors ${bedrooms === num
                         ? 'bg-emerald-500 text-white shadow'
                         : 'text-slate-400 hover:text-white'
-                    }`}
+                      }`}
                   >
                     {num === 5 ? '5+' : num}
                   </button>
@@ -146,11 +144,10 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenQuot
                   <button
                     key={num}
                     onClick={() => setBathrooms(num)}
-                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-colors ${
-                      bathrooms === num
+                    className={`flex-1 py-2 text-xs font-bold rounded-lg transition-colors ${bathrooms === num
                         ? 'bg-emerald-500 text-white shadow'
                         : 'text-slate-400 hover:text-white'
-                    }`}
+                      }`}
                   >
                     {num === 4 ? '4+' : num}
                   </button>
@@ -175,11 +172,10 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenQuot
                 <button
                   key={addon.id}
                   onClick={() => toggleAddOn(addon.id)}
-                  className={`flex items-center justify-between p-3 rounded-xl text-xs sm:text-sm font-medium border transition-all ${
-                    addOns[addon.id]
+                  className={`flex items-center justify-between p-3 rounded-xl text-xs sm:text-sm font-medium border transition-all ${addOns[addon.id]
                       ? 'bg-emerald-950/80 border-emerald-500 text-emerald-200 shadow-md'
                       : 'bg-slate-800/50 border-slate-700 text-slate-400 hover:text-slate-200'
-                  }`}
+                    }`}
                 >
                   <span className="flex items-center gap-2">
                     <CheckCircle2 className={`w-4 h-4 ${addOns[addon.id] ? 'text-emerald-400' : 'text-slate-600'}`} />

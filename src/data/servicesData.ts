@@ -15,10 +15,10 @@ export interface ServiceItem {
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "residential-cleaning",
-    title: "Residential Home Cleaning",
+    title: "Residential House Cleaning",
     category: "residential",
     shortDesc: "Routine domestic cleaning tailored for busy Melbourne families. Weekly, fortnightly, or monthly options.",
-    fullDesc: "Our eco-friendly home cleaning services transform your living space into a pristine sanctuary. From dusting ceiling fans to scrubbing kitchen benchtops and sanitizing bathrooms, CYSERA takes care of every detail.",
+    fullDesc: "Our eco-friendly House Cleaning services transform your living space into a pristine sanctuary. From dusting ceiling fans to scrubbing kitchen benchtops and sanitizing bathrooms, CYSERA takes care of every detail.",
     iconName: "Home",
     startingPrice: "$50",
     badge: "Most Popular",

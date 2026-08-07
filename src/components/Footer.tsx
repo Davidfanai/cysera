@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               "Everything Beautiful in Its Time" <span className="text-slate-400 text-xs font-sans font-normal">(Ecclesiastes 3:11)</span>
             </p>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              Making your home beautiful again. Residential & Commercial cleaning, Home Cleaning, Office Cleaning, Solar Cleaning, and Carpet Steam Cleaning across Eastern Suburbs.
+              Making your home beautiful again. Residential & Commercial cleaning, House Cleaning, Office Cleaning, Solar Cleaning, and Carpet Steam Cleaning across Eastern Suburbs.
             </p>
 
             <div className="p-3 bg-amber-400/10 border border-amber-400/30 rounded-xl text-amber-300 text-xs font-bold flex items-center gap-2">
@@ -90,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
           <div className="space-y-3">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white">Services Offered</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>Residential Home Cleaning</li>
+              <li>Residential House Cleaning</li>
               <li>End of Lease Clean</li>
               <li>Commercial & Office Cleaning</li>
               <li>Carpet Steam Cleaning</li>

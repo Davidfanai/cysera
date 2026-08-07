@@ -59,5 +59,15 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     beforeImg: "/images/before5.jpeg",
     afterImg: "/images/after5.jpeg",
     tags: ["Basin Clean", "Descaling", "Bathroom Scrub"]
+  },
+  {
+    id: "gal-6",
+    title: "Sitting Room & Living Area Deep Clean",
+    category: "kitchen",
+    location: "Mitcham Residence",
+    description: "Complete sitting room transformation including timber floor polishing, sofa tidying, coffee table glass cleaning, and high dusting.",
+    beforeImg: "/images/before6.jpeg",
+    afterImg: "/images/after6.jpeg",
+    tags: ["Sitting Room", "Living Area", "Deep Clean"]
   }
 ];
