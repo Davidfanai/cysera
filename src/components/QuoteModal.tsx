@@ -186,17 +186,17 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 />
               </div>
 
+              <button
+                type="submit"
+                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm mt-1"
+              >
+                <Send className="w-4 h-4" /> Send Free Quote Request
+              </button>
+
               <div className="flex items-center gap-2 p-2.5 sm:p-3 bg-emerald-50 rounded-xl text-[11px] sm:text-xs text-emerald-900 border border-emerald-200">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Fully Insured ($10M) • Police Checked Staff • 100% Satisfaction Guarantee</span>
               </div>
-
-              <button
-                type="submit"
-                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-5 rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm mt-1"
-              >
-                <Send className="w-4 h-4" /> Send Free Quote Request
-              </button>
             </form>
           )}
         </div>
