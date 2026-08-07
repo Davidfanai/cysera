@@ -31,12 +31,12 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full shadow-md bg-white">
+    <header className="sticky top-0 z-40 w-full max-w-full shadow-md bg-white overflow-hidden">
       {/* Top Announcement Bar with Special Offer & ABN */}
-      <div className="bg-slate-950 text-slate-200 text-xs py-2 px-4 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
-            <span className="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded-full text-[11px] flex items-center gap-1">
+      <div className="bg-slate-950 text-slate-200 text-xs py-2 px-3 sm:px-4 border-b border-slate-800 w-full max-w-full overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-2">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3">
+            <span className="bg-amber-400 text-slate-950 font-black px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] flex items-center gap-1 shrink-0">
               <Tag className="w-3 h-3" /> SPECIAL OFFER: 20% OFF YOUR FIRST CLEAN!
             </span>
             <span className="hidden md:inline-flex items-center gap-1 text-emerald-400 font-semibold">
@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
           </div>
 
-          <div className="flex items-center gap-3 text-xs font-medium">
+          <div className="flex items-center gap-2 sm:gap-3 text-xs font-medium shrink-0">
             <a
               href="tel:0475436637"
               className="flex items-center gap-1 text-white hover:text-emerald-400 font-bold transition-colors"
@@ -73,10 +73,10 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between w-full max-w-full">
         <button
           onClick={() => handleNavClick('home')}
-          className="hover:opacity-90 transition-opacity text-left"
+          className="hover:opacity-90 transition-opacity text-left shrink-0"
         >
           <CyseraLogo variant="light" />
         </button>
@@ -102,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({
         </nav>
 
         {/* Header Right Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-3 shrink-0">
           <a
             href="tel:0475436637"
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-300 text-slate-700 hover:border-emerald-600 hover:text-emerald-700 text-xs font-bold transition-colors"
@@ -120,7 +120,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+          className="md:hidden p-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors shrink-0"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -129,7 +129,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl animate-fade-in">
+        <div className="md:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl animate-fade-in w-full max-w-full overflow-hidden">
           <nav className="flex flex-col space-y-1">
             {navItems.map(item => (
               <button
