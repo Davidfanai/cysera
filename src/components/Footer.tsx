@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ShieldCheck, Award, ArrowUp, Tag } from 'lucide-react';
 import { ALL_SUBURBS } from '../data/suburbsData';
-import { InstagramIcon, FacebookIcon } from './SocialIcons';
+import { FacebookIcon } from './SocialIcons';
 import { CyseraLogo } from './CyseraLogo';
 
 interface FooterProps {
@@ -47,22 +47,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
 
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/19FJYRjeT6/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 text-slate-400 hover:text-white flex items-center justify-center transition-colors"
+                aria-label="Facebook Page"
+                className="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 text-slate-300 hover:text-white flex items-center gap-2 text-xs font-bold transition-all"
               >
-                <FacebookIcon className="w-4 h-4" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 text-slate-400 hover:text-white flex items-center justify-center transition-colors"
-              >
-                <InstagramIcon className="w-4 h-4" />
+                <FacebookIcon className="w-4 h-4 text-[#1877F2]" />
+                <span>CYSERA Facebook Page</span>
               </a>
             </div>
           </div>
@@ -121,7 +113,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
                     <a href="tel:0474780469" className="font-bold text-white hover:text-emerald-400 transition-colors block">
                       0474 780 469
                     </a>
-                    <div className="text-xs text-slate-500">Call / SMS (7 AM - 8 PM)</div>
+                    <div className="text-xs text-slate-500">Call / WhatsApp (7 AM - 8 PM)</div>
                   </div>
                 </div>
               </div>

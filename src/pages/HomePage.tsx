@@ -16,7 +16,6 @@ import {
 import { SERVICES_DATA } from '../data/servicesData';
 import { REVIEWS_DATA } from '../data/reviewsData';
 import { SuburbSearch } from '../components/SuburbSearch';
-import { SocialFeed } from '../components/SocialFeed';
 import { MarqueeTicker } from '../components/MarqueeTicker';
 import { ScrollReveal } from '../components/ScrollReveal';
 
@@ -28,7 +27,7 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuoteModal }) => {
   return (
     <div className="pb-0 overflow-hidden">
-      {/* 1. Hero Section (UNTOUCHED) */}
+      {/* 1. Hero Section */}
       <section className="relative overflow-hidden bg-slate-950 text-white pt-16 pb-24 sm:pt-24 sm:pb-36">
         {/* Soft Blurry Sunlit Background Photo Overlay */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -334,7 +333,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuoteModal
                 <span className="text-white font-bold ml-1.5 text-sm">5.0 / 5</span>
               </div>
               <p className="text-emerald-100 text-xs sm:text-sm mt-1">
-                500+ verified reviews from satisfied homeowners across Eastern Suburbs.
+                Verified reviews from satisfied homeowners across Eastern Suburbs.
               </p>
             </div>
           </ScrollReveal>
@@ -373,15 +372,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuoteModal
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <SuburbSearch />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* 8. Full-Width Dark Navy Background: Social Feed */}
-      <section className="w-full bg-slate-950 text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal>
-            <SocialFeed />
           </ScrollReveal>
         </div>
       </section>
