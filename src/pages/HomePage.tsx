@@ -28,7 +28,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuoteModal
   return (
     <div className="pb-0 overflow-hidden">
       {/* 1. Hero Section */}
-      <section className="relative overflow-hidden bg-slate-950 text-white pt-16 pb-24 sm:pt-24 sm:pb-36">
+      <section className="relative overflow-hidden bg-slate-950 text-white pt-10 sm:pt-16 pb-24 sm:pb-36">
         {/* Soft Blurry Sunlit Background Photo Overlay */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
@@ -40,20 +40,24 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuoteModal
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-slate-900/70 to-slate-950/85"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center space-y-5">
-          {/* Subtle Top Promo Pill */}
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold uppercase tracking-wider backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-            20% OFF YOUR FIRST CLEAN
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center space-y-4">
+          {/* Top Promo Pill (Positioned Higher Up) */}
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-500/25 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-extrabold uppercase tracking-wider backdrop-blur-md shadow-md">
+              <Sparkles className="w-4 h-4 text-emerald-400" />
+              20% OFF YOUR FIRST CLEAN
+            </div>
           </div>
 
-          {/* Compact Headline */}
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
-            Professional Residential & Commercial Cleaning Services
+          {/* 3-Line Formatted Headline */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto space-y-1 sm:space-y-2 pt-1">
+            <span className="block">Professional</span>
+            <span className="block text-emerald-300">Residential & Commercial</span>
+            <span className="block">Cleaning Services</span>
           </h1>
 
           {/* Slogan */}
-          <p className="font-motto italic text-emerald-200 text-sm sm:text-base font-normal">
+          <p className="font-motto italic text-emerald-200 text-sm sm:text-base font-normal pt-1">
             "Everything Beautiful in Its Time" <span className="text-slate-300 text-xs font-sans not-italic">(Ecclesiastes 3:11)</span>
           </p>
 
@@ -295,7 +299,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuoteModal
                 </div>
                 <h3 className="text-lg font-bold text-slate-900">Flexible Scheduling</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Book at your convenience with weekend & same-day availability for urgent cleaning needs.
+                  Book at your convenience with Monday – Saturday availability for urgent cleaning needs.
                 </p>
               </div>
             </ScrollReveal>
