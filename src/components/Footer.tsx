@@ -113,7 +113,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
                     <a href="tel:0474780469" className="font-bold text-white hover:text-emerald-400 transition-colors block">
                       0474 780 469
                     </a>
-                    <div className="text-xs text-slate-500">Call / WhatsApp (7 AM - 8 PM)</div>
+                    <div className="text-xs text-slate-500">Call / WhatsApp (Mon – Sat: 7 AM - 8 PM)</div>
                   </div>
                 </div>
               </div>

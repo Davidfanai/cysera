@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle2, Clock, Tag } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CheckCircle2, Clock } from 'lucide-react';
 import { ALL_SUBURBS } from '../data/suburbsData';
 import { SERVICES_DATA } from '../data/servicesData';
 import { SuburbSearch } from '../components/SuburbSearch';
-import { InstagramIcon, FacebookIcon, WhatsAppIcon } from '../components/SocialIcons';
+import { FacebookIcon, WhatsAppIcon } from '../components/SocialIcons';
 
 export const ContactPage: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -13,29 +13,26 @@ export const ContactPage: React.FC = () => {
   const [service, setService] = useState<string>('residential-cleaning');
   const [date, setDate] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [sent, setSent] = useState<boolean>(false);
+  const [submitted, setSubmitted] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setSubmitted(true);
   };
 
   return (
     <div className="space-y-16 pb-16">
-      {/* Contact Header */}
+      {/* Header Banner */}
       <section className="bg-slate-950 text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400 text-slate-950 text-xs font-black uppercase tracking-wider">
-            <Tag className="w-4 h-4 fill-slate-950" /> SPECIAL OFFER: 20% OFF YOUR FIRST CLEAN!
-          </div>
+          <span className="bg-emerald-500/20 text-emerald-300 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+            Fast Response Guarantee
+          </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
             Contact CYSERA Cleaning Services
           </h1>
-          <p className="text-emerald-300 font-serif italic text-base sm:text-lg">
-            "Everything Beautiful in Its Time" <span className="text-slate-400 text-xs font-sans font-normal">(Ecclesiastes 3:11)</span>
-          </p>
-          <p className="text-slate-300 text-base max-w-2xl mx-auto">
-            Making your home beautiful again. Contact us today for Home Cleaning, Office Cleaning, Steam Cleaning, or End of Lease services across Melbourne's Eastern Suburbs.
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto">
+            Have questions or need a fast, transparent quote? Reach out to our local Bayswater North team today.
           </p>
         </div>
       </section>
@@ -95,7 +92,7 @@ export const ContactPage: React.FC = () => {
                   <a href="mailto:cyseracleaning@gmail.com" className="text-slate-900 font-bold hover:text-emerald-600 transition-colors text-sm sm:text-base">
                     cyseracleaning@gmail.com
                   </a>
-                  <p className="text-xs text-slate-500 mt-0.5">Checked 7 days a week</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Mon – Sat Email Support</p>
                 </div>
               </div>
 
@@ -112,67 +109,66 @@ export const ContactPage: React.FC = () => {
 
               <div className="flex items-start gap-4 pt-4 border-t border-slate-100">
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-                  <Clock className="w-5 h-5" />
+                  <Clock className="w-5 h-5 text-emerald-600" />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 uppercase font-bold">Operating Hours</div>
-                  <div className="text-slate-900 font-bold text-sm">Monday – Sunday: 7:00 AM – 8:00 PM</div>
+                  <div className="text-slate-900 font-bold text-sm">Monday – Saturday: 7:00 AM – 8:00 PM</div>
+                  <p className="text-xs text-slate-500 mt-0.5 text-rose-600 font-semibold">Closed on Sundays</p>
                 </div>
               </div>
 
               <div className="pt-4 border-t border-slate-100">
-                <div className="text-xs font-bold text-slate-700 uppercase mb-3">Direct Social Channels</div>
-                <div className="flex gap-3">
+                <div className="text-xs font-bold text-slate-700 uppercase mb-3">Official Social Media</div>
+                <div>
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/share/19FJYRjeT6/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white py-2.5 rounded-xl font-bold text-xs hover:bg-blue-700 transition-colors"
+                    className="w-full flex items-center justify-center gap-2 bg-[#1877F2] text-white py-3 rounded-xl font-bold text-xs hover:bg-[#166fe5] transition-colors shadow-sm"
                   >
-                    <FacebookIcon className="w-4 h-4" /> Facebook Page
-                  </a>
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 text-white py-2.5 rounded-xl font-bold text-xs hover:from-pink-500 hover:to-purple-500 transition-all"
-                  >
-                    <InstagramIcon className="w-4 h-4" /> Instagram Direct
+                    <FacebookIcon className="w-4 h-4 fill-current" /> CYSERA Official Facebook Page
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Contact Form Column */}
+          {/* Contact & Quote Form Column */}
           <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-1">Claim 20% Off Your First Clean</h2>
-            <p className="text-slate-600 text-sm mb-6">
-              Fill out the form below to receive your discount quote or book your cleaning service.
-            </p>
-
-            {sent ? (
+            {submitted ? (
               <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto animate-bounce">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900">Message Delivered!</h3>
+                <h3 className="text-2xl font-bold text-slate-900">Message Received!</h3>
                 <p className="text-slate-600 text-sm max-w-md mx-auto">
-                  Thank you, <strong>{name}</strong>. Our CYSERA team has received your message and will call you back shortly at <strong>{phone}</strong> with your 20% off discount.
+                  Thank you, <strong className="text-slate-900">{name}</strong>. Our team will review your request and get back to you at <strong className="text-slate-900">{phone}</strong> shortly.
                 </p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="bg-emerald-600 text-white font-bold px-6 py-2.5 rounded-xl text-xs hover:bg-emerald-700 transition-colors"
+                >
+                  Send Another Message
+                </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <h3 className="text-xl font-extrabold text-slate-900">Send Us A Message</h3>
+                  <p className="text-xs text-slate-500 mt-1">Fill in your requirements and we will contact you directly.</p>
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name *</label>
+                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
                     <input
                       type="text"
                       required
                       value={name}
                       onChange={e => setName(e.target.value)}
-                      placeholder="Jane Smith"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                      placeholder="e.g. John Doe"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                     />
                   </div>
                   <div>
@@ -182,8 +178,8 @@ export const ContactPage: React.FC = () => {
                       required
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
-                      placeholder="0475 436 637"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                      placeholder="e.g. 0412 345 678"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                     />
                   </div>
                 </div>
@@ -196,16 +192,16 @@ export const ContactPage: React.FC = () => {
                       required
                       value={email}
                       onChange={e => setEmail(e.target.value)}
-                      placeholder="cyseracleaning@gmail.com"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                      placeholder="john@example.com.au"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Property Suburb *</label>
+                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Suburb *</label>
                     <select
                       value={suburb}
                       onChange={e => setSuburb(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white"
                     >
                       {ALL_SUBURBS.map((sub, i) => (
                         <option key={i} value={sub}>{sub}</option>
@@ -216,14 +212,14 @@ export const ContactPage: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required</label>
+                    <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Service Needed</label>
                     <select
                       value={service}
                       onChange={e => setService(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none bg-white"
                     >
-                      {SERVICES_DATA.map(s => (
-                        <option key={s.id} value={s.id}>{s.title}</option>
+                      {SERVICES_DATA.map(srv => (
+                        <option key={srv.id} value={srv.id}>{srv.title}</option>
                       ))}
                     </select>
                   </div>
@@ -233,27 +229,27 @@ export const ContactPage: React.FC = () => {
                       type="date"
                       value={date}
                       onChange={e => setDate(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Message / Property Details</label>
+                  <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Property Specs & Notes</label>
                   <textarea
                     rows={4}
                     value={message}
                     onChange={e => setMessage(e.target.value)}
-                    placeholder="Tell us about your cleaning needs, number of bedrooms, carpet areas, special requirements..."
-                    className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                    placeholder="Tell us about your property (e.g. 3 bedrooms, 2 bathrooms, oven clean required)..."
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 text-base"
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-4 px-6 rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
-                  <Send className="w-5 h-5" /> Submit & Get 20% Off
+                  <Send className="w-4 h-4" /> Send Direct Inquiry
                 </button>
               </form>
             )}
@@ -261,7 +257,8 @@ export const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Suburb Search & Service Map */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <SuburbSearch />
       </section>
     </div>

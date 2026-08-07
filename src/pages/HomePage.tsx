@@ -155,8 +155,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuoteModal
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
                   <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-xl sm:text-3xl font-black text-slate-900 whitespace-nowrap">7 Days</div>
-                <div className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Flexible Availability</div>
+                <div className="text-xl sm:text-3xl font-black text-slate-900 whitespace-nowrap">Mon – Sat</div>
+                <div className="text-[11px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">Opening Days</div>
               </div>
             </div>
           </ScrollReveal>
