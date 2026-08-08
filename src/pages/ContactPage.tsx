@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Send, CheckCircle2, Clock } from 'lucide-react';
 import { ALL_SUBURBS } from '../data/suburbsData';
 import { SERVICES_DATA } from '../data/servicesData';
 import { SuburbSearch } from '../components/SuburbSearch';
-import { FacebookIcon, WhatsAppIcon } from '../components/SocialIcons';
+import { FacebookIcon, InstagramIcon, WhatsAppIcon } from '../components/SocialIcons';
 
 export const ContactPage: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -120,14 +120,22 @@ export const ContactPage: React.FC = () => {
 
               <div className="pt-4 border-t border-slate-100">
                 <div className="text-xs font-bold text-slate-700 uppercase mb-3">Official Social Media</div>
-                <div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <a
                     href="https://www.facebook.com/share/19FJYRjeT6/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-[#1877F2] text-white py-3 rounded-xl font-bold text-xs hover:bg-[#166fe5] transition-colors shadow-sm"
+                    className="w-full flex items-center justify-center gap-2 bg-[#1877F2] text-white py-3 rounded-xl font-bold text-xs hover:bg-[#166fe5] transition-colors shadow-sm text-center"
                   >
-                    <FacebookIcon className="w-4 h-4 fill-current" /> CYSERA Official Facebook Page
+                    <FacebookIcon className="w-4 h-4 fill-current shrink-0" /> CYSERA Facebook
+                  </a>
+                  <a
+                    href="https://www.instagram.com/cyseracleaningservices?utm_source=qr&wa_status_inline=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white py-3 rounded-xl font-bold text-xs hover:opacity-95 transition-all shadow-sm text-center"
+                  >
+                    <InstagramIcon className="w-4 h-4 shrink-0" /> CYSERA Instagram
                   </a>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Sparkles, Leaf } from 'lucide-react';
-import { FacebookIcon } from '../components/SocialIcons';
+import { FacebookIcon, InstagramIcon } from '../components/SocialIcons';
 
 interface AboutPageProps {
   onNavigate?: (page: string) => void;
@@ -59,8 +59,8 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
               </div>
             </div>
 
-            {/* Official Facebook Social Media Link */}
-            <div className="pt-2">
+            {/* Official Social Media Links */}
+            <div className="pt-2 flex flex-wrap gap-3">
               <a
                 href="https://www.facebook.com/share/19FJYRjeT6/?mibextid=wwXIfr"
                 target="_blank"
@@ -68,7 +68,16 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                 className="inline-flex items-center gap-3 bg-[#1877F2] hover:bg-[#166fe5] text-white font-extrabold py-3.5 px-6 rounded-2xl shadow-lg transition-all hover:scale-105 text-sm"
               >
                 <FacebookIcon className="w-5 h-5 fill-current" />
-                <span>Visit & Follow CYSERA on Facebook</span>
+                <span>Visit & Follow on Facebook</span>
+              </a>
+              <a
+                href="https://www.instagram.com/cyseracleaningservices?utm_source=qr&wa_status_inline=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:opacity-95 text-white font-extrabold py-3.5 px-6 rounded-2xl shadow-lg transition-all hover:scale-105 text-sm"
+              >
+                <InstagramIcon className="w-5 h-5" />
+                <span>Visit & Follow on Instagram</span>
               </a>
             </div>
           </div>
@@ -89,14 +98,24 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                   <span>📍 Service Area: Eastern Suburbs, Melbourne</span>
                   <span>📜 ABN: 50 471 908 668</span>
                   <span>📞 Call / WhatsApp: 0475 436 637 / 0474 780 469</span>
-                  <a
-                    href="https://www.facebook.com/share/19FJYRjeT6/?mibextid=wwXIfr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#1877F2] font-bold hover:underline inline-flex items-center gap-1.5 mt-0.5"
-                  >
-                    <FacebookIcon className="w-3.5 h-3.5 fill-current" /> Facebook: CYSERA Cleaning Services
-                  </a>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-0.5">
+                    <a
+                      href="https://www.facebook.com/share/19FJYRjeT6/?mibextid=wwXIfr"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#1877F2] font-bold hover:underline inline-flex items-center gap-1.5"
+                    >
+                      <FacebookIcon className="w-3.5 h-3.5 fill-current" /> Facebook
+                    </a>
+                    <a
+                      href="https://www.instagram.com/cyseracleaningservices?utm_source=qr&wa_status_inline=true"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-pink-600 font-bold hover:underline inline-flex items-center gap-1.5"
+                    >
+                      <InstagramIcon className="w-3.5 h-3.5" /> Instagram
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -80,7 +80,7 @@ export const SocialFeed: React.FC = () => {
 
         <div className="flex items-center gap-3">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/cyseracleaningservices?utm_source=qr&wa_status_inline=true"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg transition-all"
@@ -89,7 +89,7 @@ export const SocialFeed: React.FC = () => {
             <ExternalLink className="w-3 h-3 opacity-70" />
           </a>
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/share/19FJYRjeT6/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg transition-all"

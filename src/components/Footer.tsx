@@ -1,7 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ShieldCheck, Award, ArrowUp, Tag } from 'lucide-react';
 import { ALL_SUBURBS } from '../data/suburbsData';
-import { FacebookIcon } from './SocialIcons';
+import { FacebookIcon, InstagramIcon } from './SocialIcons';
 import { CyseraLogo } from './CyseraLogo';
 
 interface FooterProps {
@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               </div>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="https://www.facebook.com/share/19FJYRjeT6/?mibextid=wwXIfr"
                 target="_blank"
@@ -54,7 +54,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
                 className="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 text-slate-300 hover:text-white flex items-center gap-2 text-xs font-bold transition-all"
               >
                 <FacebookIcon className="w-4 h-4 text-[#1877F2]" />
-                <span>CYSERA Facebook Page</span>
+                <span>Facebook</span>
+              </a>
+              <a
+                href="https://www.instagram.com/cyseracleaningservices?utm_source=qr&wa_status_inline=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Page"
+                className="px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-pink-500 text-slate-300 hover:text-white flex items-center gap-2 text-xs font-bold transition-all"
+              >
+                <InstagramIcon className="w-4 h-4 text-pink-500" />
+                <span>Instagram</span>
               </a>
             </div>
           </div>
