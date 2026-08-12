@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle2, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CheckCircle2, Clock, Loader2, AlertCircle } from 'lucide-react';
 import { ALL_SUBURBS } from '../data/suburbsData';
 import { SERVICES_DATA } from '../data/servicesData';
 import { SuburbSearch } from '../components/SuburbSearch';
@@ -14,10 +14,44 @@ export const ContactPage: React.FC = () => {
   const [date, setDate] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const formData = new FormData();
+      formData.append("access_key", "5a366eaa-2f7c-4638-88ac-d5439b2bfcc8");
+      formData.append("subject", `New CYSERA Inquiry from ${name}`);
+      formData.append("from_name", "CYSERA Cleaning Contact Page");
+      formData.append("name", name);
+      formData.append("phone", phone);
+      formData.append("email", email);
+      formData.append("suburb", suburb);
+      formData.append("service", SERVICES_DATA.find(s => s.id === service)?.title || service);
+      formData.append("preferred_date", date || "Not specified");
+      formData.append("message", message || "No additional message");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(data.message || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setErrorMessage("Network error. Please try again or call us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -154,7 +188,10 @@ export const ContactPage: React.FC = () => {
                   Thank you, <strong className="text-slate-900">{name}</strong>. Our team will review your request and get back to you at <strong className="text-slate-900">{phone}</strong> shortly.
                 </p>
                 <button
-                  onClick={() => setSubmitted(false)}
+                  onClick={() => {
+                    setSubmitted(false);
+                    setErrorMessage(null);
+                  }}
                   className="bg-emerald-600 text-white font-bold px-6 py-2.5 rounded-xl text-xs hover:bg-emerald-700 transition-colors"
                 >
                   Send Another Message
@@ -166,6 +203,13 @@ export const ContactPage: React.FC = () => {
                   <h3 className="text-xl font-extrabold text-slate-900">Send Us A Message</h3>
                   <p className="text-xs text-slate-500 mt-1">Fill in your requirements and we will contact you directly.</p>
                 </div>
+
+                {errorMessage && (
+                  <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
@@ -255,9 +299,18 @@ export const ContactPage: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-4 px-6 rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
+                  disabled={isSubmitting}
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white font-extrabold py-4 px-6 rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
-                  <Send className="w-4 h-4" /> Send Direct Inquiry
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" /> Sending Message...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" /> Send Direct Inquiry
+                    </>
+                  )}
                 </button>
               </form>
             )}

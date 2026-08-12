@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Send, CheckCircle2, ShieldCheck, Sparkles, Calendar, MapPin, User, Phone, Mail } from 'lucide-react';
+import { X, Send, CheckCircle2, ShieldCheck, Sparkles, Calendar, MapPin, User, Phone, Mail, Loader2, AlertCircle } from 'lucide-react';
 import { SERVICES_DATA } from '../data/servicesData';
 import { ALL_SUBURBS } from '../data/suburbsData';
 
@@ -22,6 +22,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [preferredDate, setPreferredDate] = useState<string>('');
   const [notes, setNotes] = useState<string>('');
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (initialServiceDetails) {
@@ -31,13 +33,46 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const formData = new FormData();
+      formData.append("access_key", "5a366eaa-2f7c-4638-88ac-d5439b2bfcc8");
+      formData.append("subject", `New CYSERA Quote Request from ${name}`);
+      formData.append("from_name", "CYSERA Cleaning Website");
+      formData.append("name", name);
+      formData.append("phone", phone);
+      formData.append("email", email);
+      formData.append("suburb", suburb);
+      formData.append("service", SERVICES_DATA.find(s => s.id === selectedService)?.title || selectedService);
+      formData.append("preferred_date", preferredDate || "Not specified");
+      formData.append("message", notes || "No additional notes");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(data.message || "Unable to send quote request right now. Please try again.");
+      }
+    } catch (err) {
+      setErrorMessage("Network error. Please try again or call us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setErrorMessage(null);
     onClose();
   };
 
@@ -88,6 +123,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+              {errorMessage && (
+                <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div className="min-w-0">
                   <label className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase mb-1 flex items-center gap-1">
@@ -190,9 +232,18 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
               <button
                 type="submit"
-                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm mt-1"
+                disabled={isSubmitting}
+                className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm mt-1"
               >
-                <Send className="w-4 h-4" /> Send Free Quote Request
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" /> Sending Quote Request...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" /> Send Free Quote Request
+                  </>
+                )}
               </button>
 
               <div className="flex items-center gap-2 p-2.5 sm:p-3 bg-emerald-50 rounded-xl text-[11px] sm:text-xs text-emerald-900 border border-emerald-200">
