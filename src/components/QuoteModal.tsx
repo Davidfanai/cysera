@@ -33,8 +33,30 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   if (!isOpen) return null;
 
+  const validateEmail = (val: string): boolean => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(val.trim());
+  };
+
+  const validatePhone = (val: string): boolean => {
+    const cleanPhone = val.replace(/[\s\-\(\)]/g, '');
+    const phoneRegex = /^(\+?61|0)[2-9]\d{8}$|^[0-9\+]{8,14}$/;
+    return phoneRegex.test(cleanPhone);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setErrorMessage("Please enter a valid email address (e.g. name@example.com.au).");
+      return;
+    }
+
+    if (!validatePhone(phone)) {
+      setErrorMessage("Please enter a valid Australian phone number (e.g. 0412 345 678).");
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMessage(null);
 
@@ -154,6 +176,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     value={phone}
                     onChange={e => setPhone(e.target.value)}
                     placeholder="e.g. 0412 345 678"
+                    pattern="[0-9\s\-\+\(\)]{8,15}"
                     className={inputStyle}
                   />
                 </div>
