@@ -248,7 +248,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
               <div className="flex items-center gap-2 p-2.5 sm:p-3 bg-emerald-50 rounded-xl text-[11px] sm:text-xs text-emerald-900 border border-emerald-200">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Fully Insured ($10M) • Police Checked Staff • 100% Satisfaction Guarantee</span>
+                <span>Fully Insured ($5M) • Police Checked Staff • 100% Satisfaction Guarantee</span>
               </div>
             </form>
           )}
