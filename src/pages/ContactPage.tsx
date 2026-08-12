@@ -22,10 +22,12 @@ export const ContactPage: React.FC = () => {
     return emailRegex.test(val.trim());
   };
 
-  const validatePhone = (val: string): boolean => {
-    const cleanPhone = val.replace(/[\s\-\(\)]/g, '');
-    const phoneRegex = /^(\+?61|0)[2-9]\d{8}$|^[0-9\+]{8,14}$/;
-    return phoneRegex.test(cleanPhone);
+  const validateAustralianPhone = (val: string): boolean => {
+    const digits = val.replace(/[\s\-\(\)]/g, '');
+    const isAuMobile = /^(\+?61|0)4\d{8}$/.test(digits);
+    const isAuLandline = /^(\+?61|0)[2378]\d{8}$/.test(digits);
+    const isAuSpecial = /^(13\d{4}|1300\d{6}|1800\d{6})$/.test(digits);
+    return isAuMobile || isAuLandline || isAuSpecial;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,8 +38,8 @@ export const ContactPage: React.FC = () => {
       return;
     }
 
-    if (!validatePhone(phone)) {
-      setErrorMessage("Please enter a valid Australian phone number (e.g. 0412 345 678).");
+    if (!validateAustralianPhone(phone)) {
+      setErrorMessage("Please enter a valid Australian phone number (e.g. 0412 345 678 or 03 9800 0000).");
       return;
     }
 
@@ -253,7 +255,6 @@ export const ContactPage: React.FC = () => {
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
                       placeholder="e.g. 0412 345 678"
-                      pattern="[0-9\s\-\+\(\)]{8,15}"
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                     />
                   </div>
