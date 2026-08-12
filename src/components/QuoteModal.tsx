@@ -26,10 +26,10 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    if (initialServiceDetails) {
-      setNotes(prev => (prev ? `${prev} | ${initialServiceDetails}` : initialServiceDetails));
+    if (isOpen) {
+      setNotes(initialServiceDetails || '');
     }
-  }, [initialServiceDetails]);
+  }, [isOpen, initialServiceDetails]);
 
   if (!isOpen) return null;
 
