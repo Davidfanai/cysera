@@ -128,9 +128,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
                 </div>
               </div>
 
-              <a href="mailto:cyseracleaning@gmail.com" className="flex items-center gap-2.5 text-slate-300 hover:text-emerald-400 transition-colors">
+              <a href="mailto:contact@cysera.com.au" className="flex items-center gap-2.5 text-slate-300 hover:text-emerald-400 transition-colors">
                 <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="text-xs font-semibold">cyseracleaning@gmail.com</span>
+                <span className="text-xs font-semibold">contact@cysera.com.au</span>
               </a>
 
               <div className="flex items-start gap-2.5 text-slate-400 text-xs">

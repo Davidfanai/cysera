@@ -147,8 +147,8 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 uppercase font-bold">Email Address</div>
-                  <a href="mailto:cyseracleaning@gmail.com" className="text-slate-900 font-bold hover:text-emerald-600 transition-colors text-sm sm:text-base">
-                    cyseracleaning@gmail.com
+                  <a href="mailto:contact@cysera.com.au" className="text-slate-900 font-bold hover:text-emerald-600 transition-colors text-sm sm:text-base">
+                    contact@cysera.com.au
                   </a>
                   <p className="text-xs text-slate-500 mt-0.5">Mon – Sat Email Support</p>
                 </div>

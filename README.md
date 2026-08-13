@@ -170,7 +170,7 @@ npm run preview
 - **Phone / WhatsApp**:
   - `0475 436 637`
   - `0474 780 469`
-- **Email**: `cyseracleaning@gmail.com`
+- **Email**: `contact@cysera.com.au`
 - **Operating Hours**: Monday – Saturday: 7:00 AM – 8:00 PM *(Closed Sundays)*
 - **Official Social Media**:
   - 📘 **Facebook**: [CYSERA Cleaning Services on Facebook](https://www.facebook.com/share/19FJYRjeT6/?mibextid=wwXIfr)
