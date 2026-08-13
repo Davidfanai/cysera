@@ -30,6 +30,8 @@ export const ContactPage: React.FC = () => {
     return isAuMobile || isAuLandline || isAuSpecial;
   };
 
+  const todayString = new Date().toISOString().split('T')[0];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -40,6 +42,11 @@ export const ContactPage: React.FC = () => {
 
     if (!validateAustralianPhone(phone)) {
       setErrorMessage("Please enter a valid Australian phone number (e.g. 0412 345 678 or 03 9800 0000).");
+      return;
+    }
+
+    if (date && date < todayString) {
+      setErrorMessage("Preferred date cannot be in the past. Please select today or a future date.");
       return;
     }
 
@@ -303,6 +310,7 @@ export const ContactPage: React.FC = () => {
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Preferred Date</label>
                     <input
                       type="date"
+                      min={todayString}
                       value={date}
                       onChange={e => setDate(e.target.value)}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"

@@ -46,6 +46,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     return isAuMobile || isAuLandline || isAuSpecial;
   };
 
+  const todayString = new Date().toISOString().split('T')[0];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -56,6 +58,11 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
     if (!validateAustralianPhone(phone)) {
       setErrorMessage("Please enter a valid Australian phone number (e.g. 0412 345 678 or 03 9800 0000).");
+      return;
+    }
+
+    if (preferredDate && preferredDate < todayString) {
+      setErrorMessage("Preferred date cannot be in the past. Please select today or a future date.");
       return;
     }
 
@@ -234,6 +241,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   </label>
                   <input
                     type="date"
+                    min={todayString}
                     value={preferredDate}
                     onChange={e => setPreferredDate(e.target.value)}
                     className={`${inputStyle} appearance-none`}
