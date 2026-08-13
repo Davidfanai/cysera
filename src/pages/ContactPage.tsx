@@ -30,6 +30,42 @@ export const ContactPage: React.FC = () => {
     return isAuMobile || isAuLandline || isAuSpecial;
   };
 
+  const validatePreferredDate = (val: string): { isValid: boolean; error?: string } => {
+    if (!val) return { isValid: true };
+
+    const parts = val.split('-');
+    if (parts.length !== 3) return { isValid: false, error: "Please enter a valid date in YYYY-MM-DD format." };
+
+    const year = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10) - 1;
+    const day = parseInt(parts[2], 10);
+
+    const selectedDate = new Date(year, month, day);
+    if (isNaN(selectedDate.getTime())) {
+      return { isValid: false, error: "Please enter a valid date." };
+    }
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    if (selectedDate < today) {
+      return { isValid: false, error: "Preferred date cannot be in the past. Please select today or a future date." };
+    }
+
+    // Closed on Sundays (Day 0)
+    if (selectedDate.getDay() === 0) {
+      return { isValid: false, error: "We are closed on Sundays. Please select a date from Monday to Saturday." };
+    }
+
+    const maxDate = new Date();
+    maxDate.setFullYear(maxDate.getFullYear() + 1);
+    if (selectedDate > maxDate) {
+      return { isValid: false, error: "Preferred date cannot be more than 1 year in advance." };
+    }
+
+    return { isValid: true };
+  };
+
   const todayString = new Date().toISOString().split('T')[0];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -45,8 +81,9 @@ export const ContactPage: React.FC = () => {
       return;
     }
 
-    if (date && date < todayString) {
-      setErrorMessage("Preferred date cannot be in the past. Please select today or a future date.");
+    const dateCheck = validatePreferredDate(date);
+    if (!dateCheck.isValid) {
+      setErrorMessage(dateCheck.error || "Please select a valid preferred date.");
       return;
     }
 
@@ -312,9 +349,18 @@ export const ContactPage: React.FC = () => {
                       type="date"
                       min={todayString}
                       value={date}
-                      onChange={e => setDate(e.target.value)}
+                      onChange={e => {
+                        setDate(e.target.value);
+                        const check = validatePreferredDate(e.target.value);
+                        if (!check.isValid) {
+                          setErrorMessage(check.error || null);
+                        } else {
+                          setErrorMessage(null);
+                        }
+                      }}
                       className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                     />
+                    <p className="text-[10px] text-slate-400 mt-1">Mon – Sat availability only</p>
                   </div>
                 </div>
 
