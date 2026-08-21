@@ -342,8 +342,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuoteModal
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {REVIEWS_DATA.slice(0, 3).map((rev, rIdx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {REVIEWS_DATA.map((rev, rIdx) => (
               <ScrollReveal key={rev.id} delayMs={rIdx * 150}>
                 <div className="bg-white text-slate-900 p-6 sm:p-8 rounded-3xl shadow-2xl hover:-translate-y-1.5 transition-transform flex flex-col justify-between h-full">
                   <div>
